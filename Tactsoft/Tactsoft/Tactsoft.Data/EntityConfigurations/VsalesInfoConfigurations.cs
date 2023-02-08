@@ -1,0 +1,19 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Tactsoft.Core.Entities;
+
+namespace Tactsoft.Data.EntityConfigurations
+{
+    public class VsalesInfoConfigurations : IEntityTypeConfiguration<VsalesInfo>
+    {
+        public void Configure(EntityTypeBuilder<VsalesInfo> builder)
+        {
+            builder.HasKey(F => F.Id);
+        }
+    }
+}
