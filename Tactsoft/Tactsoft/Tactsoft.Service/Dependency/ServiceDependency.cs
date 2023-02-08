@@ -16,6 +16,7 @@ namespace Tactsoft.Service.Dependency
             //services.AddScoped<IEmployeeService, EmployeeService>();
             //services.AddScoped<IStudentService, StudentService>();
             //services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<ICategoryService, CategoryService>();
 
 
         }
