@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tactsoft.Service.Services;
+using Tactsoft.Core.Entities;
 
 namespace Tactsoft.Service.Dependency
 {
@@ -17,6 +18,8 @@ namespace Tactsoft.Service.Dependency
             //services.AddScoped<IStudentService, StudentService>();
             //services.AddScoped<IDepartmentService, DepartmentService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IEmployeeSalaryTbService, EmployeeSalaryTbService>();
+
 
 
         }
