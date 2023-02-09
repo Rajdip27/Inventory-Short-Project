@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 using Tactsoft.Core.Base;
 
 namespace Tactsoft.Core.Entities
@@ -13,6 +15,8 @@ namespace Tactsoft.Core.Entities
 
        
         public long SupplierId { get; set; }
+        [Display(Name = "Purchase Date")]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime PurchaseDate { get; set; }
         public double Discount { get; set; }
         public double Total { get; set; }

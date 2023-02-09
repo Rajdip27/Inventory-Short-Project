@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace Tactsoft.Service.Services
 {
     public interface ISupplierService:IBaseService<Supplier>
     {
+        IEnumerable<SelectListItem> Dropdown();
     }
 }
