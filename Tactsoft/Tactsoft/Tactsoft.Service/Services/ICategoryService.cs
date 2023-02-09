@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,6 @@ namespace Tactsoft.Service.Services
 {
     public interface ICategoryService:IBaseService<Category>
     {
-
+        IEnumerable<SelectListItem> Dropdown();
     }
 }

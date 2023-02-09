@@ -20,6 +20,7 @@ namespace Tactsoft.Service.Dependency
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IEmployeeSalaryTbService, EmployeeSalaryTbService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IItemService, ItemService>();
 
 
 

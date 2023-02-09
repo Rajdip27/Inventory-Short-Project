@@ -14,9 +14,7 @@ namespace Tactsoft.Data.EntityConfigurations
         public void Configure(EntityTypeBuilder<Item> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.HasOne(d => d.Category)
-                    .WithMany(p => p.Items)
-                    .HasForeignKey(d => d.CategoryId);
+            builder.HasOne(d => d.Category).WithMany(p => p.Items).HasForeignKey(d => d.CategoryId);
         }
     }
 }
