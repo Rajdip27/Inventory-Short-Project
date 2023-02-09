@@ -18,6 +18,9 @@ namespace Tactsoft.Service.Services
          this.appDbContext = context;
         }
 
-      
+        public IEnumerable<SelectListItem> Dropdown()
+        {
+            return All().Select(x => new SelectListItem { Text = x.ItemName, Value = x.Id.ToString() });
+        }
     }
 }

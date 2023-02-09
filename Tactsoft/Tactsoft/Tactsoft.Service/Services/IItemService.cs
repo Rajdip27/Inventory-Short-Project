@@ -11,6 +11,6 @@ namespace Tactsoft.Service.Services
 {
     public interface IItemService:IBaseService<Item>
     {
-       
+        IEnumerable<SelectListItem> Dropdown();
     }
 }
