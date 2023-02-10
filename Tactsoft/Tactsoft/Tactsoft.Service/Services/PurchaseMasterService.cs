@@ -20,7 +20,7 @@ namespace Tactsoft.Service.Services
 
         public IEnumerable<SelectListItem> Dropdown()
         {
-            throw new NotImplementedException();
+            return All().Select(x => new SelectListItem { Text = x.Supplier.SupplierName.ToString(), Value = x.Id.ToString() });
         }
     }
 }

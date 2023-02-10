@@ -23,6 +23,8 @@ namespace Tactsoft.Service.Dependency
             services.AddScoped<IItemService, ItemService>();
             services.AddScoped<IPurchaseMasterService, PurchaseMasterService>();
             services.AddScoped<ISupplierService, SupplierService>();
+            services.AddScoped<IPurchaseDetailsService, PurchaseDetailsService>();
+
 
 
 
