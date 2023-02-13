@@ -95,6 +95,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VEZXRhaWxzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Inventory/Tactsoft/Tactsoft/Tactsoft/Views/PurchaseDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VEZXRhaWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Inventory/Tactsoft/Tactsoft/Tactsoft/Views/PurchaseDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VEZXRhaWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Inventory/Tactsoft/Tactsoft/Tactsoft/Views/PurchaseDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VEZXRhaWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Inventory/Tactsoft/Tactsoft/Tactsoft/Views/PurchaseDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VEZXRhaWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

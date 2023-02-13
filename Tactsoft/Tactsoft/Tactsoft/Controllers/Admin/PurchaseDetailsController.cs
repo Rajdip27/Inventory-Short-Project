@@ -49,5 +49,131 @@ namespace Tactsoft.Controllers.Admin
                 return View(ex.Message);
             }
         }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    return NotFound();
+                }
+                ViewData["PurchaseId"] = _purchaseMasterService.Dropdown();
+                ViewData["ItemId"] = _itemService.Dropdown();
+                var Result = await _purchaseDetailsService.FindAsync(id);
+                return View(Result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(PurchaseDetail purchaseDetail)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var pd = await _purchaseDetailsService.FindAsync(purchaseDetail.Id);
+                    if (pd != null)
+                    {
+                       pd.Item=purchaseDetail.Item;
+                        pd.Qty=purchaseDetail.Qty;
+                        pd.Rate=purchaseDetail.Rate;
+                        pd.PurchaseId=purchaseDetail.PurchaseId;
+
+                        await _purchaseDetailsService.UpdateAsync(pd);
+                        TempData["successAlert"] = "Purchase Details Update successfull.";
+                        return RedirectToAction(actionName: nameof(Index));
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                }
+                ViewData["PurchaseId"] = _purchaseMasterService.Dropdown();
+                ViewData["ItemId"] = _itemService.Dropdown();
+                return View(purchaseDetail);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    return NotFound();
+                }
+                ViewData["PurchaseId"] = _purchaseMasterService.Dropdown();
+                ViewData["ItemId"] = _itemService.Dropdown();
+                var Result = await _purchaseDetailsService.FindAsync(x=>x.Id==id,x=>x.Purchase);
+                return View(Result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    return NotFound();
+                }
+                
+                var Result = await _purchaseDetailsService.FindAsync(x => x.Id == id, c => c.Purchase);
+                return View(Result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteCon(int id)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (id == null)
+                    {
+                        return NotFound();
+                    }
+                    var it = await _purchaseDetailsService.FindAsync(id);
+                    if (it != null)
+                    {
+                        await _purchaseDetailsService.DeleteAsync(it);
+                        TempData["successAlert"] = "Purchase Master Delete successfull.";
+                        return RedirectToAction(actionName: nameof(Index));
+
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+
+                }
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

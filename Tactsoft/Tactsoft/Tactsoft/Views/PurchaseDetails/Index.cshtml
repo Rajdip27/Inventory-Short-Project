@@ -38,7 +38,7 @@
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.PurchaseId)
+                                    @Html.DisplayNameFor(model => model.Purchase)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.ItemId)
@@ -57,7 +57,7 @@
                             {
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Purchase)
+                                        @Html.DisplayFor(modelItem => item.Purchase.SupplierId)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Item.ItemName)
